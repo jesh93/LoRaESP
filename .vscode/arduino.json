@@ -1,0 +1,6 @@
+{
+    "board": "SODAQ:samd:sodaq_explorer",
+    "sketch": "ttn-otaa.ino",
+    "port": "/dev/ttyACM0",
+    "output": "../build"
+}

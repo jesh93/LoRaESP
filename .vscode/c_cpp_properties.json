@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/hinder/Programs/arduino-1.8.5/hardware/arduino/avr/cores/arduino",
+                "/home/hinder/.arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266",
+                "/home/hinder/.arduino15/packages/SODAQ/hardware/samd/1.6.14/cores/arduino"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "/home/hinder/Programs/arduino-1.8.5/hardware/arduino/avr/cores/arduino",
+                    "/home/hinder/Programs/arduino-1.8.5/hardware/arduino/avr/libraries",
+                    "/home/hinder/Arduino/libraries",
+                    "/home/hinder/.arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266",
+                    "/home/hinder/.arduino15/packages/SODAQ/hardware/samd/1.6.14/cores/arduino"
+                ]
+            },
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 3
+}
