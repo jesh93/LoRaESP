@@ -40,7 +40,7 @@
 // first. When copying an EUI from ttnctl output, this means to reverse
 // the bytes. For TTN issued EUIs the last bytes should be 0xD5, 0xB3,
 // 0x70.
-static const u1_t PROGMEM APPEUI[8]={ 0xB5, 0x38, 0x00, 0xF0, 0x7E, 0xD5, 0xB3, 0x70 };
+static const u1_t PROGMEM APPEUI[8]={ 0xBE, 0x7F, 0x00, 0xD0, 0x7E, 0xD5, 0xB3, 0x70 };
 void os_getArtEui (u1_t* buf) { memcpy_P(buf, APPEUI, 8);}
 
 // This should also be in little endian format, see above.
@@ -51,10 +51,10 @@ void os_getDevEui (u1_t* buf) { memcpy_P(buf, DEVEUI, 8);}
 // number but a block of memory, endianness does not really apply). In
 // practice, a key taken from ttnctl can be copied as-is.
 // The key shown here is the semtech default key.
-static const u1_t PROGMEM APPKEY[16] = { 0xE3, 0x5C, 0xB7, 0x30, 0x4B, 0xDE, 0xE9, 0xEF, 0x69, 0x94, 0x2A, 0xD3, 0xE4, 0xD9, 0xEA, 0x78 };
+static const u1_t PROGMEM APPKEY[16] = { 0x5F, 0xD5, 0x73, 0xE6, 0x72, 0x91, 0x55, 0x42, 0x3B, 0xC4, 0x3C, 0x1C, 0x84, 0xE0, 0x0E, 0xD3 };
 void os_getDevKey (u1_t* buf) {  memcpy_P(buf, APPKEY, 16);}
 
-static uint8_t mydata[] = "Hello, world!";
+static uint8_t mydata[] = "Hello";
 static osjob_t sendjob;
 
 // Schedule TX every this many seconds (might become longer due to duty
@@ -74,7 +74,7 @@ const lmic_pinmap lmic_pins = {
     .nss = 15,
     .rxtx = LMIC_UNUSED_PIN,
     .rst = 16,
-    .dio = {4, 2, LMIC_UNUSED_PIN},
+    .dio = {5, 4, LMIC_UNUSED_PIN},
 };
 
 void onEvent (ev_t ev) {
