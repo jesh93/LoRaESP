@@ -33,6 +33,8 @@
 #include <hal/hal.h>
 #include <SPI.h>
 
+#define SerialUSB Serial
+
 //#define SerialUSB Serial
 // This EUI must be in little-endian format, so least-significant-byte
 // first. When copying an EUI from ttnctl output, this means to reverse
@@ -61,19 +63,19 @@ const unsigned TX_INTERVAL = 20;
 
 // Pin mapping
 //Explorer
-const lmic_pinmap lmic_pins = {
-    .nss = 10,
-    .rxtx = LMIC_UNUSED_PIN,
-    .rst = 8,
-    .dio = {2, 3, LMIC_UNUSED_PIN},
-};
-//ESP
 // const lmic_pinmap lmic_pins = {
-//     .nss = 16,
+//     .nss = 10,
 //     .rxtx = LMIC_UNUSED_PIN,
-//     .rst = 17,
-//     .dio = {20, 19, LMIC_UNUSED_PIN},
+//     .rst = 8,
+//     .dio = {2, 3, LMIC_UNUSED_PIN},
 // };
+//ESP
+const lmic_pinmap lmic_pins = {
+    .nss = 15,
+    .rxtx = LMIC_UNUSED_PIN,
+    .rst = 16,
+    .dio = {4, 2, LMIC_UNUSED_PIN},
+};
 
 void onEvent (ev_t ev) {
     SerialUSB.print(os_getTime());
